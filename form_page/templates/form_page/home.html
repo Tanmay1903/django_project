@@ -2,5 +2,9 @@
 {% block content %}
   <h1><center>Welcome to 9eye/ifitmash home page</center></h1>
   <br>
-  <h4> Please Login / SignUp to continue! </h4> 
+  {% if user.is_authenticated %}
+    <h4> You are logged In now! Click on form to fill the form.</h4> 
+  {% else %}
+    <h4> Please Login / SignUp to continue! </h4>
+  {% endif %}
 {% endblock content %}

@@ -1,10 +1,12 @@
 from django.shortcuts import render,redirect
 from .forms import ContactForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request,'form_page/home.html')
 
+@login_required
 def form(request):
     if request.method == 'POST':
         frm = ContactForm(request.POST,request.FILES)
