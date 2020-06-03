@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework_mongoengine',
+    'rest_framework',
+    'rest_framework.authentication',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +74,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mongo_project.wsgi.application'
+
+REST_FRAMEWORK = {
+        "DEFAULT_PERMISSION_CLASSES": (
+            'rest_framework.permissions.IsAuthenticated',
+        ),
+        "DEFAULT_AUTHENTICATION_CLASSES" : (
+            'rest_framework.authentication.SessionAuthentication',
+        ),
+        }
 
 
 # Database
@@ -129,8 +141,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'form_page/static/media/documents')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
