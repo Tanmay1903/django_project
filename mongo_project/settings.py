@@ -73,8 +73,9 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = "users.custom_user"
 WSGI_APPLICATION = 'mongo_project.wsgi.application'
-
+'''
 REST_FRAMEWORK = {
         "DEFAULT_PERMISSION_CLASSES": (
             'rest_framework.permissions.IsAuthenticated',
@@ -83,7 +84,7 @@ REST_FRAMEWORK = {
             'rest_framework.authentication.SessionAuthentication',
         ),
         }
-
+'''
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -91,7 +92,7 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Form1',
+        'NAME': 'Form2',
         'CLIENT':{
         'host': "mongodb+srv://Tanmay1903:Tanmaymongodb@intern-9eye-at0b4.mongodb.net/test?retryWrites=true&w=majority"
         },

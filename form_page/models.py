@@ -17,10 +17,10 @@ import json
 
 #connect('Form1', alias='default')
 connect(
-    db= "Form1",
+    db= "Form2",
     username= "Tanmay1903",
     password= "Tanmaymongodb",
-    host='mongodb+srv://Tanmay1903:Tanmaymongodb@intern-9eye-at0b4.mongodb.net/Form1?retryWrites=true&w=majority',
+    host='mongodb+srv://Tanmay1903:Tanmaymongodb@intern-9eye-at0b4.mongodb.net/Form2?retryWrites=true&w=majority',
 )
 
 class Form_content(Document):
@@ -37,3 +37,4 @@ def json(self):
     }
     return json.dumps(form_dict)
 #'''
+disconnect()
